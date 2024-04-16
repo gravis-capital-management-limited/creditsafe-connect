@@ -272,4 +272,16 @@ class Client
     {
         return 'v1';
     }
+
+    /**
+     *  Get portfolio services
+     * @return Service\PortfolioService 
+     */
+    public function portfolios() : Service\PortfolioService
+    {
+        if (!isset($this->portfolio)) {
+            $this->portfolio = new Service\PortfolioService($this);
+        }
+        return $this->portfolio;
+    }
 }
