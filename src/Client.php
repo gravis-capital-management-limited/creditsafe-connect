@@ -201,6 +201,18 @@ class Client
     }
 
     /**
+     *  A function that handles the creation of a POST Request
+     * @param  string $endpoint  An endpoint used to create an request
+     * @param  array  $params   Sets params for a endpoint
+     * @return array  Returns the results of the endpoint
+    */
+    
+    public function post(string $endpoint, array $params = []) : array
+    {
+        return $this->request('POST', $endpoint, $params);
+    }
+
+    /**
      * Get Company Events
      * @return Service\CompanyEventService Returns Company Events
      */
